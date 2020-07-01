@@ -8,13 +8,23 @@ var searchHistory = "";
 var currentDay = moment().format("dddd, MMMM Do");
 
 //Array of cities searched
-var searchedCities = [];
+var searchedCities = ["Austin","Atlanta","Chicago","Los Angelos", "New York","San Fransisco", "Seattle"];
 
 // URL Base
 var queryURLBase = "https://api.openweathermap.org/data/2.5/forecast?q=" + queryCity + "&units=imperial&appid=" + authKey;
 
 // Functions
 // =================================================
+
+// Created search history for cities 
+function searchHistory() {
+    let searchedCities = localStorage.getItem("weatherApp")
+    if (searchedCities) {
+        populateSearch(JSON.parse(searchedCities))
+    }
+    var cityHistory = $("<card>").addClass("card").text(searchedCities[i]);
+    $("#citiesHistory").append(cityHistory);
+}
 
 // query for 5 day forecast
 function forecastWeather(latlon) {
@@ -26,7 +36,7 @@ function forecastWeather(latlon) {
         method: "GET"
 
     }).then(function (response) {
-
+        // For Loop to populate the 5 day forecast cards
         for (var i = 1; i < 6; i++) {
 
             var icon = response.daily[i].weather[0].icon;
@@ -49,14 +59,6 @@ function forecastWeather(latlon) {
     });
 
 };
-
-function searchHistory() {
-    let searchedCities = localStorage.getItem("weatherApp")
-    if (searchedCities) {
-        populateSearch(JSON.parse(searchedCities))
-    }
-}
-
 
 function searchHistoryArray() {
     // reset 
