@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+</head>
+
+<body class="container-fluid">
+    <header class="jumbotron" style="text-align: center; background-color: rgb(20,23,26); color: #FFFFFF;">
+        <h1 class="display-4">Weather Dashboard</h1>
+    </header>
+    <div class="row">
+        <!--Search Sidebar-->
+        <div class="col-md-3">
+            <!--Search -->
+            <div>
+                <h4>Search for a City:</h4>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
+                    <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <br></br>
+            <!--Cities Search History-->
+            <div id="citiesHistory">
+            </div>
+        </div>
+        <!--Current City Details-->
+        <div class="col-md-9" id="main-content">
+            <div class="row">
+                <!--Current Weather-->
+                <div class="col-md-12">
+                    <div class="card" id="current-weather">
+                        <h3 id="cityName"><i id="weatherIcon"></i></h3>
+                        <p id="cityTemp"></p>
+                        <p id="cityHumid"></p>
+                        <p id="cityWind"></p>
+                        <p id="cityUV"></p>
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            <div class="row">
+                <!--Five-day Forecast-->
+                <div class="col-md-12">
+                    <h3>5-Day Forecast:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card" id="day1" style="background-color: rgb(29, 161, 242);">####</div>
+                </div> 
+                <div class="col-md-2">
+                    <div class="card" id="day2"style="background-color: rgb(29, 161, 242);">####</div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="day3" style="background-color:rgb(29, 161, 242);">####</div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="day4" style="background-color: rgb(29, 161, 242);">####</div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card" id="day5" style="background-color: rgb(29, 161, 242);">####</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
